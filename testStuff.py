@@ -1,3 +1,9 @@
-from Gift_Shop_mySQL_import import sqlConnect
+from PyPDF2 import PdfFileMerger, PdfFileReader
 
-sqlConnect("FunValleyGiftshopItemData", "Sheet3", "2016 Bow and Arrow", "", 8.99)
+filenames = ['watermark.pdf', 'overlay.pdf']
+
+merger = PdfFileMerger()
+for filename in filenames:
+    merger.append(PdfFileReader(filename, 'rb'))
+
+merger.write("merged.pdf")

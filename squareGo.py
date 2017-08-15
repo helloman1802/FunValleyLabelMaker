@@ -140,7 +140,9 @@ def square():
 
                 file_name = "qrcode%d.png" % (n)
                 QR = qr.create(row["A"])
+                print(row["A"])
                 QR.png(file_name, scale=1)
+                sleep(0.05)
                 print(row_count, totalLabels)
                 if counter == 0:
                     c.drawImage(file_name, 25, 37.5)
@@ -3149,7 +3151,7 @@ def circle():
     sheet_name = "Sheet"
     sh = gc.open(sheet_file_name)
     sheet = sh.worksheet(sheet_name)
-    
+
     all_rows = sheet.get_all_values()
     end_row = len(all_rows)
     position = 1
@@ -3252,6 +3254,7 @@ def circle():
                 file_name = "qrcode%d.png" % (n)
                 QR = qr.create(row["A"])
                 QR.png(file_name, scale=1)
+                sleep(0.05)
 
 
 
@@ -3804,3 +3807,9 @@ def circle():
     except KeyboardInterrupt:
         print(": EXITING")
         quit()
+
+
+@app.route('/reprint/')
+def reprint():
+    os.system("lp merged.pdf")
+    return redirect("http://172.29.0.29/index.php/pandas-are-done-slaving/")

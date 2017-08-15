@@ -9,6 +9,7 @@ from reportlab.pdfgen import canvas
 from random_words import RandomWords
 from random import randint
 import math
+from time import sleep
 rw = RandomWords()
 
 # Google Sheets loging using O Auth 2.0
@@ -97,7 +98,7 @@ def user_input():
                         file_name = "qrcode%d.png" % (n)
                         QR = qr.create(fun_sku_number)
                         QR.png(file_name, scale=1)
-
+                        sleep(0.05)
 
 
 
@@ -629,6 +630,7 @@ def user_input():
                         file_name = "qrcode%d.png" % (n)
                         QR = qr.create(fun_sku_number)
                         QR.png(file_name, scale=1)
+                        sleep(0.05)
 
                         if counter == 0:
                             c.drawImage(file_name, 25, 37.5)

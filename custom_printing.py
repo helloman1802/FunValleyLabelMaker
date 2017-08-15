@@ -1,3 +1,14 @@
+#!/usr/bin/python3
+
+
+# This program is the same as the pandas label maker except it is used to create custom print queries.
+# This program allows the user to pick the quantity of labels and lets the user pick the starting position on the Avery label paper.
+# It is mainly used to print on label paper that has been partially used.
+
+# This program runs on a dash server. Dash is an open source interactive web interface that runs on the flask framework and was created by plotly. Flask is a python web framework.
+# The dash server allows the user to input data into the program without haveing to refresh anything. 
+
+
 import dash
 from dash.dependencies import Input, Output, Event
 import dash_core_components as dcc
